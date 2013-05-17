@@ -2,7 +2,7 @@
 
 #include "ppbox/avbase/Common.h"
 #include "ppbox/avbase/StreamInfo.h"
-#include "ppbox/avbase/Format.h"
+#include "ppbox/avbase/StreamType.h"
 
 namespace ppbox
 {
@@ -21,7 +21,9 @@ namespace ppbox
 
         StreamInfo::StreamInfo()
             : format_type(0)
+            , context(NULL)
         {
+            memset(&video_format, 0, sizeof(video_format));
         }
 
     } // namespace avbase

@@ -3,10 +3,6 @@
 #ifndef _PPBOX_AVBASE_STREAM_INFO_H_
 #define _PPBOX_AVBASE_STREAM_INFO_H_
 
-#include "ppbox/avcodec/Codec.h"
-
-#include <boost/intrusive_ptr.hpp>
-
 namespace ppbox
 {
     namespace avbase
@@ -43,7 +39,6 @@ namespace ppbox
             boost::uint32_t bitrate;
             boost::uint64_t start_time;
             boost::uint64_t duration;
-            boost::intrusive_ptr<ppbox::avcodec::Codec> codec;
         };
 
         struct StreamInfo
@@ -57,6 +52,7 @@ namespace ppbox
                 AudioInfo audio_format;
             };
             std::vector<boost::uint8_t> format_data; // 格式说明的内容
+            void const * context;
         };
 
     } // namespace avbase

@@ -34,6 +34,22 @@ namespace ppbox
             };
         };
 
+        struct StreamSubType
+        {
+            enum Enum
+            {
+                NONE = 0, 
+            };
+        };
+
+        struct StreamFormatType
+        {
+            enum Enum
+            {
+                none = 0, 
+            };
+        };
+
     } // namespace avbase
 } // namespace ppbox
 
