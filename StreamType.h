@@ -1,7 +1,7 @@
-// Format.h
+// StreamType.h
 
-#ifndef _PPBOX_AVBASE_FORMAT_H_
-#define _PPBOX_AVBASE_FORMAT_H_
+#ifndef _PPBOX_AVBASE_STREAM_TYPE_H_
+#define _PPBOX_AVBASE_STREAM_TYPE_H_
 
 #include "ppbox/avbase/FourCC.h"
 
@@ -18,6 +18,12 @@ namespace ppbox
                 VIDE = MAKE_FOURC_TYPE('V', 'I', 'D', 'E'), 
                 AUDI = MAKE_FOURC_TYPE('A', 'U', 'D', 'I'), 
             };
+
+            static boost::uint32_t from_string(
+                std::string const & str);
+
+            static std::string to_string(
+                boost::uint32_t e);
         };
 
         struct StreamSubType
@@ -39,4 +45,4 @@ namespace ppbox
     } // namespace avbase
 } // namespace ppbox
 
-#endif // _PPBOX_AVBASE_FORMAT_H_
+#endif // _PPBOX_AVBASE_STREAM_TYPE_H_
