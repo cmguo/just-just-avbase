@@ -19,6 +19,33 @@ namespace ppbox
         {
         }
 
+        static boost::uint32_t common_divisor(
+            boost::uint32_t scale_in, 
+            boost::uint32_t scale_out)
+        {
+            while (scale_in != scale_out) {
+                if (scale_in > scale_out) {
+                    scale_in -= scale_in / scale_out * scale_out;
+                    if (scale_in == 0)
+                        return scale_out;
+                } else {
+                    scale_out -= scale_out / scale_in * scale_in;
+                    if (scale_out == 0)
+                        return scale_in;
+                }
+            }
+            return scale_in;
+        }
+
+        void VideoInfo::frame_rate(
+            boost::uint32_t n, 
+            boost::uint32_t d)
+        {
+            boost::uint32_t c = common_divisor(n, d);
+            frame_rate_num = n / c;
+            frame_rate_den = d / c;
+        }
+
         StreamInfo::StreamInfo()
             : format_type(0)
             , context(NULL)

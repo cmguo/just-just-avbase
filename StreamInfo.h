@@ -12,7 +12,24 @@ namespace ppbox
         {
             boost::uint32_t width;
             boost::uint32_t height;
-            boost::uint32_t frame_rate;
+            boost::uint32_t frame_rate_num;
+            boost::uint32_t frame_rate_den;
+
+            boost::uint32_t frame_rate() const
+            {
+                return frame_rate_den == 0 ? 0 : frame_rate_num / frame_rate_den;
+            }
+
+            void frame_rate(
+                boost::uint32_t f)
+            {
+                frame_rate_num = f;
+                frame_rate_den = 1;
+            }
+
+            void frame_rate(
+                boost::uint32_t n, 
+                boost::uint32_t d);
         };
 
         struct AudioInfo
@@ -20,6 +37,7 @@ namespace ppbox
             boost::uint32_t channel_count;
             boost::uint32_t sample_size;
             boost::uint32_t sample_rate;
+            boost::uint32_t sample_per_frame;
         };
 
         struct StreamInfoBase
