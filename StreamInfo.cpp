@@ -23,6 +23,8 @@ namespace ppbox
             boost::uint32_t scale_in, 
             boost::uint32_t scale_out)
         {
+            if (scale_in == 0 || scale_out == 0)
+                return 1;
             while (scale_in != scale_out) {
                 if (scale_in > scale_out) {
                     scale_in -= scale_in / scale_out * scale_out;
