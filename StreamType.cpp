@@ -11,9 +11,9 @@ namespace ppbox
         boost::uint32_t StreamType::from_string(
             std::string const & str)
         {
-            if (str.size() == 4) {
-                boost::uint32_t e;
-                memcpy(&e, str.c_str(), 4);
+            if (str.size() <= 4) {
+                boost::uint32_t e = 0;
+                memcpy(&e, str.c_str(), str.size());
                 return (Enum)e;
             }
             return NONE;
