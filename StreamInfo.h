@@ -37,6 +37,7 @@ namespace ppbox
             boost::uint32_t channel_count;
             boost::uint32_t sample_size;
             boost::uint32_t sample_rate;
+            boost::uint32_t block_align;
             boost::uint32_t sample_per_frame;
         };
 

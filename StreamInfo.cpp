@@ -52,7 +52,7 @@ namespace ppbox
             : format_type(0)
             , context(NULL)
         {
-            memset(&video_format, 0, sizeof(video_format));
+            memset(&video_format, 0, sizeof(audio_format));
         }
 
     } // namespace avbase
