@@ -19,4 +19,21 @@
     (((boost::uint32_t)c4) << 24))
 #endif
 
+namespace ppbox
+{
+    namespace avbase
+    {
+
+        struct FourCC
+        {
+            static boost::uint32_t from_string(
+                std::string const & str);
+
+            static std::string to_string(
+                boost::uint32_t e);
+        };
+
+    } // namespace avbase
+} // namespace ppbox
+
 #endif // _PPBOX_AVBASE_FOUR_CC_H_

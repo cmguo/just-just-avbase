@@ -1,25 +1,25 @@
-// StreamInfo.cpp
+// FourCC.cpp
 
 #include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/StreamType.h"
+#include "ppbox/avbase/FourCC.h"
 
 namespace ppbox
 {
     namespace avbase
     {
 
-        boost::uint32_t StreamType::from_string(
+        boost::uint32_t FourCC::from_string(
             std::string const & str)
         {
             if (str.size() <= 4) {
                 boost::uint32_t e = 0;
                 memcpy(&e, str.c_str(), str.size());
-                return (Enum)e;
+                return e;
             }
-            return NONE;
+            return 0;
         }
 
-        std::string StreamType::to_string(
+        std::string FourCC::to_string(
             boost::uint32_t e)
         {
             char c[5] = {0};

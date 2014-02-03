@@ -18,12 +18,6 @@ namespace ppbox
                 VIDE = MAKE_FOURC_TYPE('V', 'I', 'D', 'E'), 
                 AUDI = MAKE_FOURC_TYPE('A', 'U', 'D', 'I'), 
             };
-
-            static boost::uint32_t from_string(
-                std::string const & str);
-
-            static std::string to_string(
-                boost::uint32_t e);
         };
 
         struct StreamSubType
