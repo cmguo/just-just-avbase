@@ -22,8 +22,8 @@ namespace ppbox
             typename ObjT
         >
         class Object
-            : public ObjectBase
-            , public ObjT::header_type
+            : public ObjT::header_type
+            , public ObjectBase
         {
         public:
             typedef typename ObjT::header_type header_type;

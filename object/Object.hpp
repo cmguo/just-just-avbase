@@ -39,12 +39,18 @@ namespace ppbox
         template <typename ObjT>
         Object<ObjT>::Object(
             Object const & r)
-            : ObjectBase()
-            , header_type(r)
+            : header_type(r)
+            , ObjectBase()
             , data_(buf_)
         {
             // default copy constructor will copy member "data_", which is not expected to 
-            ObjectBase::operator =(r);
+            if (r.ObjectBase::empty()) {
+                // copy raw data
+                reserve((size_t)header_type::data_size());
+                memcpy(data_, r.data_, (size_t)header_type::data_size());
+            } else {
+                ObjectBase::operator =(r);
+            }
         }
 
         template <typename ObjT>
@@ -165,7 +171,7 @@ namespace ppbox
         template <typename ObjT>
         typename Object<ObjT>::raw_data_t Object<ObjT>::raw_data() const
         {
-            return raw_data_t(data_, data_ == buf_ ? sizeof(buf_) : data_size_);
+            return raw_data_t(data_, (size_t)header_type::data_size());
         }
 
         template <typename ObjT>
@@ -232,6 +238,7 @@ namespace ppbox
         {
             Object * m = static_cast<Object *>(mb);
             Object const * mr = static_cast<Object const *>(mbr);
+            m->reserve(sizeof(T));
             new (m->data_) T(mr->as<T>());
         }
 
