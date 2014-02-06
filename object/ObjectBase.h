@@ -25,7 +25,25 @@ namespace ppbox
                 ObjectBase const & r);
 
         public:
-            bool empty() const;
+            bool empty() const
+            {
+                return def_ == NULL;
+            }
+
+            ObjectDefine::ClassEnum cls() const
+            {
+                return def_ ? def_->cls : ObjectDefine::cls_meta;
+            }
+
+            bool is_cls_meta() const
+            {
+                return def_ == NULL || def_->cls == ObjectDefine::cls_meta;
+            }
+
+            bool is_cls_data() const
+            {
+                return def_ && def_->cls == ObjectDefine::cls_data;
+            }
 
         protected:
             void load(

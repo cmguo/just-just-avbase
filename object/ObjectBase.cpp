@@ -61,16 +61,13 @@ namespace ppbox
         void ObjectBase::reset(
             ObjectDefine const * def)
         {
-            if (!empty()) {
+            if (def_) {
                 def_->destroy(this);
             }
-            def->construct(this);
             def_ = def;
-        }
-
-        bool ObjectBase::empty() const
-        {
-            return def_ == NULL;
+            if (def_) {
+                def_->construct(this);
+            }
         }
 
     } // namespace avbase

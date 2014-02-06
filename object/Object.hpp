@@ -80,6 +80,7 @@ namespace ppbox
             id_type id)
         {
             ObjectBase::reset(find_obj(id));
+            header_type::id(id);
         }
 
         template <typename ObjT>
@@ -136,25 +137,16 @@ namespace ppbox
             ia >> (header_type &)(*this);
             if (!ia)
                 return;
-            std::streampos data_beg = ia.tellg();
-            std::streampos data_end = 
-                data_beg + (std::streamoff)header_type::data_size();
+            ObjectBase::reset(find_obj(header_type::id()));
             typename ObjT::data_helper_t hlp2(hlp);
-            ObjectDefine const * def = find_obj(header_type::id());
-            if (def) {
-                if (def->cls != ObjectDefine::cls_data) {
-                    ia.seekg(data_end, std::ios::beg);
-                    if (!ia)
-                        return;
-                    ia.seekg(data_beg, std::ios::beg);
-                }
-                ObjectBase::reset(def);
-                ObjectBase::load(&ia);
-                assert(!ia || def->cls == ObjectDefine::cls_data || ia.tellg() == data_end);
-            } else {
+            if (!ia)
+                return;
+            if (ObjectBase::empty()) {
                 reserve((size_t)header_type::data_size());
                 ia >> framework::container::make_array(data_, (size_t)header_type::data_size());
                 //LOG_DEBUG("[load] unknown box type: " << ctx->path);
+            } else {
+                ObjectBase::load(&ia);
             }
         }
 
@@ -164,8 +156,16 @@ namespace ppbox
         {
             typename ObjT::helper_t hlp(oa, *this);
             oa << (header_type const &)(*this);
+            if (!oa)
+                return;
             typename ObjT::data_helper_t hlp2(hlp);
-            ObjectBase::save(&oa);
+            if (!oa)
+                return;
+            if (ObjectBase::empty()) {
+                oa << framework::container::make_array(data_, (size_t)header_type::data_size());
+            } else {
+                ObjectBase::save(&oa);
+            }
         }
 
         template <typename ObjT>
