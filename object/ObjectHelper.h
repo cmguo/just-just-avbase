@@ -67,6 +67,7 @@ namespace ppbox
                         header.data_size(data_size());
                         oa_->seekp(beg_);
                         (*oa_) << header;
+                        assert(oa_->tellp() == data_beg_);
                         oa_->seekp(end_);
                     }
                 }

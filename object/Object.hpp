@@ -92,7 +92,7 @@ namespace ppbox
             reset();
             header_type::id(T::static_id);
             def_ = &T::obj_def;
-            assert(sizeof(T) <= sizeof(data_));
+            reserve(sizeof(T));
             new (data_) T(t);
         }
 
@@ -172,6 +172,15 @@ namespace ppbox
         typename Object<ObjT>::raw_data_t Object<ObjT>::raw_data() const
         {
             return raw_data_t(data_, (size_t)header_type::data_size());
+        }
+
+        template <typename ObjT>
+        void Object<ObjT>::raw_data(
+            raw_data_t const & data)
+        {
+            header_type::data_size(data.size());
+            reserve(data.size());
+            memcpy(data_, data.address(), data.size());
         }
 
         template <typename ObjT>

@@ -83,6 +83,9 @@ namespace ppbox
 
             raw_data_t raw_data() const;
 
+            void raw_data(
+                raw_data_t const & data);
+
         public:
             template <typename T>
             static void reg_obj(
