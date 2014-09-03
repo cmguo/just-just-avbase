@@ -155,7 +155,7 @@ namespace ppbox
                 h_.end_data();
             }
 
-        private:
+        protected:
             ObjectHelper<ObjT> & h_;
         };
 

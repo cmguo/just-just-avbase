@@ -144,7 +144,6 @@ namespace ppbox
             if (ObjectBase::empty()) {
                 reserve((size_t)header_type::data_size());
                 ia >> framework::container::make_array(data_, (size_t)header_type::data_size());
-                //LOG_DEBUG("[load] unknown box type: " << ctx->path);
             } else {
                 ObjectBase::load(&ia);
             }
