@@ -36,9 +36,9 @@ namespace ppbox
             , stream_info(s.stream_info)
             , memory(s.memory)
             , context(s.context)
-            , data(s.data)
         {
-            s.memory = NULL;
+            data.swap(const_cast<Sample &>(s).data);
+            const_cast<Sample &>(s).memory = NULL;
         }
 
         Sample & Sample::operator=(
@@ -56,30 +56,15 @@ namespace ppbox
             stream_info = s.stream_info;
             memory = s.memory;
             context = s.context;
-            data = s.data;
+            data.swap(const_cast<Sample &>(s).data);
 
-            s.memory = NULL;
+            const_cast<Sample &>(s).memory = NULL;
 
             return *this;
         }
 
-        void Sample::slice(
-            Sample const & s)
-        {
-            assert(memory == NULL);
-
-            itrack = s.itrack;
-            flags = s.flags;
-            time = s.time;
-            dts = s.dts;
-            cts_delta = s.cts_delta;
-            duration = s.duration;
-            stream_info = s.stream_info;
-            context = s.context;
-        }
-
         void Sample::append(
-            Sample const & s)
+            Sample & s)
         {
             append(s.memory);
             s.memory = NULL;

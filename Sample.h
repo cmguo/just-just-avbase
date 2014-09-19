@@ -26,6 +26,10 @@ namespace ppbox
                  f_sync = 1, 
                  f_discontinuity = 2,
                  f_config = 4, 
+                 f_multiple = 0x10,
+                 f_fragment = 0x20, 
+                 f_frag_end = 0x40, 
+                 f_frag_lost = 0x80, 
             };
 
             Sample();
@@ -36,11 +40,8 @@ namespace ppbox
             Sample & operator=(
                 Sample const & s);
 
-            void slice(
-                Sample const & s);
-
             void append(
-                Sample const & s);
+                Sample & s);
 
             void append(
                 MemoryLock * mem);
@@ -53,7 +54,7 @@ namespace ppbox
             boost::uint32_t duration;
             boost::uint32_t size;
             StreamInfo const * stream_info;
-            mutable MemoryLock * memory; // 内存锁
+            MemoryLock * memory; // 内存锁
             void const * context; // 处理上下文
             std::deque<boost::asio::const_buffer> data;
         };
