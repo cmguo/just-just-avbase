@@ -5,6 +5,11 @@
 
 namespace ppbox
 {
+    namespace avcodec
+    {
+        class Codec;
+    }
+
     namespace avbase
     {
 
@@ -71,6 +76,7 @@ namespace ppbox
                 AudioInfo audio_format;
             };
             std::vector<boost::uint8_t> format_data; // 格式说明的内容
+            ppbox::avcodec::Codec * codec;
             void const * context;
         };
 
