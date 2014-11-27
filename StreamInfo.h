@@ -1,9 +1,9 @@
 // StreamInfo.h
 
-#ifndef _PPBOX_AVBASE_STREAM_INFO_H_
-#define _PPBOX_AVBASE_STREAM_INFO_H_
+#ifndef _JUST_AVBASE_STREAM_INFO_H_
+#define _JUST_AVBASE_STREAM_INFO_H_
 
-namespace ppbox
+namespace just
 {
     namespace avcodec
     {
@@ -76,11 +76,11 @@ namespace ppbox
                 AudioInfo audio_format;
             };
             std::vector<boost::uint8_t> format_data; // 格式说明的内容
-            ppbox::avcodec::Codec * codec;
+            just::avcodec::Codec * codec;
             void const * context;
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_STREAM_INFO_H_
+#endif // _JUST_AVBASE_STREAM_INFO_H_

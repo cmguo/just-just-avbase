@@ -1,7 +1,7 @@
 // Format.h
 
-#ifndef _PPBOX_AVBASE_FOUR_CC_H_
-#define _PPBOX_AVBASE_FOUR_CC_H_
+#ifndef _JUST_AVBASE_FOUR_CC_H_
+#define _JUST_AVBASE_FOUR_CC_H_
 
 #include <boost/detail/endian.hpp>
 
@@ -19,7 +19,7 @@
     (((boost::uint32_t)c4) << 24))
 #endif
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -34,6 +34,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_FOUR_CC_H_
+#endif // _JUST_AVBASE_FOUR_CC_H_

@@ -1,14 +1,14 @@
 // Object.hpp
 
-#ifndef _PPBOX_AVBASE_OBJECT_OBJECT_HPP_
-#define _PPBOX_AVBASE_OBJECT_OBJECT_HPP_
+#ifndef _JUST_AVBASE_OBJECT_OBJECT_HPP_
+#define _JUST_AVBASE_OBJECT_OBJECT_HPP_
 
-#include "ppbox/avbase/object/Object.h"
-#include "ppbox/avbase/object/ObjectTraits.h"
+#include "just/avbase/object/Object.h"
+#include "just/avbase/object/ObjectTraits.h"
 
 #include <util/serialization/Array.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -284,6 +284,6 @@ namespace ppbox
         }
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_OBJECT_OBJECT_HPP_
+#endif // _JUST_AVBASE_OBJECT_OBJECT_HPP_

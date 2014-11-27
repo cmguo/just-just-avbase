@@ -1,11 +1,11 @@
 // ObjectTraits.h
 
-#ifndef _PPBOX_AVBASE_OBJECT_OBJECT_DEFINE_H_
-#define _PPBOX_AVBASE_OBJECT_OBJECT_DEFINE_H_
+#ifndef _JUST_AVBASE_OBJECT_OBJECT_DEFINE_H_
+#define _JUST_AVBASE_OBJECT_OBJECT_DEFINE_H_
 
 #include <util/buffers/StreamBuffer.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -56,6 +56,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_OBJECT_OBJECT_DEFINE_H_
+#endif // _JUST_AVBASE_OBJECT_OBJECT_DEFINE_H_

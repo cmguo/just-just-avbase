@@ -1,11 +1,11 @@
 // ObjectBase.h
 
-#ifndef _PPBOX_AVBASE_OBJECT_OBJECT_BASE_H_
-#define _PPBOX_AVBASE_OBJECT_OBJECT_BASE_H_
+#ifndef _JUST_AVBASE_OBJECT_OBJECT_BASE_H_
+#define _JUST_AVBASE_OBJECT_OBJECT_BASE_H_
 
-#include "ppbox/avbase/object/ObjectDefine.h"
+#include "just/avbase/object/ObjectDefine.h"
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -62,6 +62,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_OBJECT_OBJECT_BASE_H_
+#endif // _JUST_AVBASE_OBJECT_OBJECT_BASE_H_

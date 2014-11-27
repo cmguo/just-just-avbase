@@ -1,16 +1,16 @@
 // StreamStatistic.cpp
 
-#include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/StreamStatistic.h"
+#include "just/avbase/Common.h"
+#include "just/avbase/StreamStatistic.h"
 
 #include <framework/logger/Logger.h>
 #include <framework/logger/StreamRecord.h>
 #include <framework/logger/Section.h>
 #include <framework/timer/Ticker.h>
 
-FRAMEWORK_LOGGER_DECLARE_MODULE_LEVEL("ppbox.avbase.StreamStatistic", framework::logger::Debug);
+FRAMEWORK_LOGGER_DECLARE_MODULE_LEVEL("just.avbase.StreamStatistic", framework::logger::Debug);
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {

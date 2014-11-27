@@ -1,11 +1,11 @@
 // StreamEvent.h
 
-#ifndef _PPBOX_AVBASE_STREAM_EVENT_H_
-#define _PPBOX_AVBASE_STREAM_EVENT_H_
+#ifndef _JUST_AVBASE_STREAM_EVENT_H_
+#define _JUST_AVBASE_STREAM_EVENT_H_
 
 #include <util/event/Event.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -32,6 +32,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_DATA_EVENT_H_
+#endif // _JUST_AVBASE_DATA_EVENT_H_

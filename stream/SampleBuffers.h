@@ -1,11 +1,11 @@
 // SampleBuffers.h
 
-#ifndef _PPBOX_AVBASE_SAMPLE_BUFFERS_H_
-#define _PPBOX_AVBASE_SAMPLE_BUFFERS_H_
+#ifndef _JUST_AVBASE_SAMPLE_BUFFERS_H_
+#define _JUST_AVBASE_SAMPLE_BUFFERS_H_
 
 #include <util/buffers/BuffersFind.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -72,6 +72,6 @@ namespace ppbox
        };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_SAMPLE_BUFFERS_H_
+#endif // _JUST_AVBASE_SAMPLE_BUFFERS_H_

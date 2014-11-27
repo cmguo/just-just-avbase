@@ -1,9 +1,9 @@
 // ObjectBase.cpp
 
-#include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/object/ObjectBase.h"
+#include "just/avbase/Common.h"
+#include "just/avbase/object/ObjectBase.h"
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -71,4 +71,4 @@ namespace ppbox
         }
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just

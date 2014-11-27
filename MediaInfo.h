@@ -1,9 +1,9 @@
 // MediaInfo.h
 
-#ifndef _PPBOX_AVBASE_MEDIA_INFO_H_
-#define _PPBOX_AVBASE_MEDIA_INFO_H_
+#ifndef _JUST_AVBASE_MEDIA_INFO_H_
+#define _JUST_AVBASE_MEDIA_INFO_H_
 
-namespace ppbox 
+namespace just 
 {
     namespace avformat
     {
@@ -75,10 +75,10 @@ namespace ppbox
             // description
             std::string name;
             std::string format_data;
-            ppbox::avformat::Format * format;
+            just::avformat::Format * format;
         }; 
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif//_PPBOX_AVBASE_MEDIA_INFO_H_
+#endif//_JUST_AVBASE_MEDIA_INFO_H_

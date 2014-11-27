@@ -1,10 +1,10 @@
 // StreamInfo.cpp
 
-#include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/StreamInfo.h"
-#include "ppbox/avbase/StreamType.h"
+#include "just/avbase/Common.h"
+#include "just/avbase/StreamInfo.h"
+#include "just/avbase/StreamType.h"
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -56,4 +56,4 @@ namespace ppbox
         }
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just

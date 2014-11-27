@@ -1,9 +1,9 @@
 // Object.h
 
-#ifndef _PPBOX_AVBASE_OBJECT_OBJECT_H_
-#define _PPBOX_AVBASE_OBJECT_OBJECT_H_
+#ifndef _JUST_AVBASE_OBJECT_OBJECT_H_
+#define _JUST_AVBASE_OBJECT_OBJECT_H_
 
-#include "ppbox/avbase/object/ObjectBase.h"
+#include "just/avbase/object/ObjectBase.h"
 
 #include <util/serialization/Serialization.h>
 #include <util/serialization/SplitMember.h>
@@ -11,7 +11,7 @@
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits/is_base_of.hpp>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -158,6 +158,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_OBJECT_OBJECT_H_
+#endif // _JUST_AVBASE_OBJECT_OBJECT_H_

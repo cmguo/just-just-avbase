@@ -1,13 +1,13 @@
 // BitsOStream.h
 
-#ifndef _PPBOX_AVBASE_STREAM_BITS_O_STREAM_H_
-#define _PPBOX_AVBASE_STREAM_BITS_O_STREAM_H_
+#ifndef _JUST_AVBASE_STREAM_BITS_O_STREAM_H_
+#define _JUST_AVBASE_STREAM_BITS_O_STREAM_H_
 
-#include "ppbox/avbase/stream/BitsType.h"
+#include "just/avbase/stream/BitsType.h"
 
 #include <util/archive/StreamOArchive.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -19,7 +19,7 @@ namespace ppbox
         class BitsOStream;
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
 namespace util
 {
@@ -31,7 +31,7 @@ namespace util
             typename _Traits, 
             size_t n
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::I<n> >
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::I<n> >
             : boost::true_type
         {
         };
@@ -41,7 +41,7 @@ namespace util
             typename _Traits, 
             size_t n
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::U<n> >
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::U<n> >
             : boost::true_type
         {
         };
@@ -51,7 +51,7 @@ namespace util
             typename _Traits, 
             typename V
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::IV<V> >
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::IV<V> >
             : boost::true_type
         {
         };
@@ -61,7 +61,7 @@ namespace util
             typename _Traits, 
             typename V
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::UV<V> >
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::UV<V> >
             : boost::true_type
         {
         };
@@ -70,7 +70,7 @@ namespace util
             typename _Elem, 
             typename _Traits
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::SE>
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::SE>
             : boost::true_type
         {
         };
@@ -79,7 +79,7 @@ namespace util
             typename _Elem, 
             typename _Traits
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::UE>
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::UE>
             : boost::true_type
         {
         };
@@ -88,7 +88,7 @@ namespace util
             typename _Elem, 
             typename _Traits
         >
-        struct is_primitive<ppbox::avbase::BitsOStream<_Elem, _Traits>, ppbox::avbase::P>
+        struct is_primitive<just::avbase::BitsOStream<_Elem, _Traits>, just::avbase::P>
             : boost::true_type
         {
         };
@@ -96,7 +96,7 @@ namespace util
     } // namespace serialization
 } // namespace util
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -139,7 +139,7 @@ namespace ppbox
 
             template<size_t N>
             void save(
-                ppbox::avbase::I<N> const & i)
+                just::avbase::I<N> const & i)
             {
                 boost::int32_t v = i;
                 write_bits_flc(N, v);
@@ -147,7 +147,7 @@ namespace ppbox
 
             template<size_t N>
             void save(
-                ppbox::avbase::U<N> const & u)
+                just::avbase::U<N> const & u)
             {
                 boost::uint32_t v = u;
                 write_bits_flc(N, v);
@@ -155,7 +155,7 @@ namespace ppbox
 
             template<typename V>
             void save(
-                ppbox::avbase::IV<V> const & i)
+                just::avbase::IV<V> const & i)
             {
                 boost::uint32_t l = i();
                 boost::int32_t v = i;
@@ -164,7 +164,7 @@ namespace ppbox
 
             template<typename V>
             void save(
-                ppbox::avbase::UV<V> const & u)
+                just::avbase::UV<V> const & u)
             {
                 boost::uint32_t l = u();
                 boost::uint32_t v = u;
@@ -172,7 +172,7 @@ namespace ppbox
             }
 
             void save(
-                ppbox::avbase::SE const & se)
+                just::avbase::SE const & se)
             {
                 boost::uint32_t len = 0;
                 boost::uint32_t v1 = 0;
@@ -181,7 +181,7 @@ namespace ppbox
             }
 
             void save(
-                ppbox::avbase::UE const & ue)
+                just::avbase::UE const & ue)
             {
                 boost::uint32_t len = 0;
                 boost::uint32_t v1 = 0;
@@ -190,7 +190,7 @@ namespace ppbox
             }
 
             void save(
-                ppbox::avbase::P const & p)
+                just::avbase::P const & p)
             {
                 if (size_this_byte_ == 0)
                     next_byte();
@@ -262,6 +262,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_STREAM_BITS_O_STREAM_H_
+#endif // _JUST_AVBASE_STREAM_BITS_O_STREAM_H_

@@ -1,11 +1,11 @@
 // Sample.cpp
 
-#include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/Sample.h"
+#include "just/avbase/Common.h"
+#include "just/avbase/Sample.h"
 
-#include <ppbox/data/base/MemoryLock.h>
+#include <just/data/base/MemoryLock.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -82,4 +82,4 @@ namespace ppbox
         }
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just

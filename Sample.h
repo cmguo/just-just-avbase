@@ -1,11 +1,11 @@
 // Sample.h
 
-#ifndef _PPBOX_AVBASE_SAMPLE_H_
-#define _PPBOX_AVBASE_SAMPLE_H_
+#ifndef _JUST_AVBASE_SAMPLE_H_
+#define _JUST_AVBASE_SAMPLE_H_
 
 #include <boost/asio/buffer.hpp>
 
-namespace ppbox
+namespace just
 {
     namespace data
     {
@@ -15,7 +15,7 @@ namespace ppbox
     namespace avbase
     {
 
-        using ppbox::data::MemoryLock;
+        using just::data::MemoryLock;
 
         struct StreamInfo;
 
@@ -60,6 +60,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_SAMPLE_H_
+#endif // _JUST_AVBASE_SAMPLE_H_

@@ -1,12 +1,12 @@
 // ObjectData.h
 
-#ifndef _PPBOX_AVBASE_OBJECT_OBJECT_DATA_H_
-#define _PPBOX_AVBASE_OBJECT_OBJECT_DATA_H_
+#ifndef _JUST_AVBASE_OBJECT_OBJECT_DATA_H_
+#define _JUST_AVBASE_OBJECT_OBJECT_DATA_H_
 
-#include "ppbox/avbase/object/ObjectTraits.h"
-#include "ppbox/avbase/object/Object.h"
+#include "just/avbase/object/ObjectTraits.h"
+#include "just/avbase/object/Object.h"
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -51,6 +51,6 @@ namespace ppbox
         ObjectDefineT<ObjT, T> const ObjectData<ObjT, T, id>::obj_def(T::static_cls);
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_OBJECT_OBJECT_DATA_H_
+#endif // _JUST_AVBASE_OBJECT_OBJECT_DATA_H_

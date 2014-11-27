@@ -1,10 +1,10 @@
 // StreamStatistic.h
 
-#ifndef _PPBOX_AVBASE_STREAM_STATISTIC_H_
-#define _PPBOX_AVBASE_STREAM_STATISTIC_H_
+#ifndef _JUST_AVBASE_STREAM_STATISTIC_H_
+#define _JUST_AVBASE_STREAM_STATISTIC_H_
 
-#include "ppbox/avbase/StreamStatus.h"
-#include "ppbox/avbase/StreamEvent.h"
+#include "just/avbase/StreamStatus.h"
+#include "just/avbase/StreamEvent.h"
 
 #include <framework/timer/TimeCounter.h>
 
@@ -12,7 +12,7 @@
 
 namespace framework { namespace timer { class Ticker; } }
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -129,6 +129,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_STREAM_STATISTIC_H_
+#endif // _JUST_AVBASE_STREAM_STATISTIC_H_

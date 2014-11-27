@@ -1,12 +1,12 @@
 // BitsType.h
 
-#ifndef _PPBOX_AVBASE_STREAM_BITS_TYPE_H_
-#define _PPBOX_AVBASE_STREAM_BITS_TYPE_H_
+#ifndef _JUST_AVBASE_STREAM_BITS_TYPE_H_
+#define _JUST_AVBASE_STREAM_BITS_TYPE_H_
 
 #include <util/serialization/Serialization.h>
 #include <util/serialization/SplitMember.h>
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -335,6 +335,6 @@ namespace ppbox
         };
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
 
-#endif // _PPBOX_AVBASE_STREAM_BITS_TYPE_H_
+#endif // _JUST_AVBASE_STREAM_BITS_TYPE_H_

@@ -1,9 +1,9 @@
 // FourCC.cpp
 
-#include "ppbox/avbase/Common.h"
-#include "ppbox/avbase/FourCC.h"
+#include "just/avbase/Common.h"
+#include "just/avbase/FourCC.h"
 
-namespace ppbox
+namespace just
 {
     namespace avbase
     {
@@ -29,4 +29,4 @@ namespace ppbox
         }
 
     } // namespace avbase
-} // namespace ppbox
+} // namespace just
