@@ -110,7 +110,11 @@ namespace just
             typename boost::enable_if<boost::is_base_of<ObjectDataBase, T> >::type *) const
         {
             assert(is<T>());
-            return *(T const *)data_;
+            union {
+                boost::uint8_t const * n;
+                T const * t;
+            } u = {data_};
+            return *u.t;
         }
 
         template <typename ObjT>
@@ -119,7 +123,11 @@ namespace just
             typename boost::enable_if<boost::is_base_of<ObjectDataBase, T> >::type *)
         {
             assert(is<T>());
-            return *(T *)data_;
+            union {
+                boost::uint8_t * n;
+                T * t;
+            } u = {data_};
+            return *u.t;
         }
 
         template <typename ObjT>
